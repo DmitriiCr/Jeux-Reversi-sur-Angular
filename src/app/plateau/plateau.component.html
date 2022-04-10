@@ -1,0 +1,13 @@
+{{nbPionPlayer1}}
+<table>
+    <tr *ngFor="let C of board ,index as i">
+            <td *ngFor="let c of C, index as j"
+            [class.Player1]="c=='Player1'"
+            [class.Player2]="c=='Player2'"
+            [class.canPlay]="playable[i][j]" 
+            (click)="PLAY(i,j)">
+                <div *ngIf="c=='Player1' || 'Player2'">
+                </div>
+          </td>
+    </tr>
+</table>

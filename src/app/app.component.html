@@ -1,0 +1,55 @@
+<h1>
+Jeu Reversi
+</h1>
+<h1>Turn : {{turn}}</h1>
+<div class="wrapper">
+<div class="one">
+    <h2>
+    <pre>
+    Player 1 :
+        </pre>
+        </h2><div class="cercleN">{{countPionoPlayer1("X")}}</div>
+     <app-plateau
+        [board]="board"
+        [turn]="turn"
+        [playable]="canPlay"
+        [nbPionPlayer1]="countPionoPlayer1('X')"
+        [nbPionPlayer2]="countPionoPlayer1('O')"
+        (play)="onClick($event[0],$event[1])"
+        >
+    </app-plateau>
+    <h2>
+        <pre>    Player 2 :</pre>
+    </h2>
+    <div class="cercleB">{{countPionoPlayer2("O")}}</div>
+</div>
+    <div class="two">
+<h2>
+<pre>
+    Player 1 :
+</pre>
+</h2>
+<div class="cercleN">{{countPionoPlayer1("X")}}</div>
+<table >
+    <tr *ngFor="let C of board, index as i">
+        <td *ngFor="let c of C, index as j"
+        [class.canPlay]="colorWhereCanPlay(i,j)"
+        (click)="onClick(i, j)"
+        [class.Player1]="c=='Player1'"
+        [class.Player2]="c=='Player2'"
+        >
+        <div *ngIf="c=='Player1' || 'Player2'">
+        </div>
+        </td>
+    </tr>
+</table>
+<h2>
+    <pre>    Player 2 :</pre>
+</h2>
+<div class="cercleB">{{countPionoPlayer2("O")}}</div>
+
+    </div>
+</div>
+
+
+<button (click) = "RestartPartie()"> Recommencer Partie </button>
