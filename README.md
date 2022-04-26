@@ -1,4 +1,8 @@
 # L3mReversiAngularY2021
+
+![image](https://user-images.githubusercontent.com/97243628/165369624-2617807c-6a3b-47f3-82f9-47fa4237851e.png)
+
+
 Make a npm install in your code editor to install necessary packages
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.1.
 
